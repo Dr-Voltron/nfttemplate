@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-//------IMPORT ICON
+//----IMPORT ICON
 import { MdNotifications } from "react-icons/md";
 import { BsSearch } from "react-icons/bs";
-import { CgMenuLeft, CgMenuRight } from "react-icons/cg;";
+import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
 
 //INTERNAL IMPORT
 import Style from "./NavBar.module.css";
@@ -14,7 +13,7 @@ import { Button } from "../componentindex";
 import images from "../../img";
 
 const NavBar = () => {
-  //----USESTATE
+  //----USESTATE COMPONNTS
   const [discover, setDiscover] = useState(false);
   const [help, setHelp] = useState(false);
   const [notification, setNotification] = useState(false);
@@ -49,15 +48,25 @@ const NavBar = () => {
       setProfile(false);
     } else {
       setNotification(false);
-      setDiscover(false);
-      setHelp(false);
-      setProfile(false);
     }
   };
 
   const openProfile = () => {
     if (!profile) {
       setProfile(true);
+      setHelp(false);
+      setDiscover(false);
+      setNotification(false);
+    } else {
+      setProfile(false);
+    }
+  };
+
+  const openSideBar = () => {
+    if (!openSideMenu) {
+      setOpenSideMenu(true);
+    } else {
+      setOpenSideMenu(false);
     }
   };
 
@@ -76,15 +85,15 @@ const NavBar = () => {
           <div className={Style.navbar_container_left_box_input}>
             <div className={Style.navbar_container_left_box_input_box}>
               <input type="text" placeholder="Search NFT" />
-              <BsSearch onClick={() => {}} className={Style.search_con} />
+              <BsSearch onClick={() => {}} className={Style.search_icon} />
             </div>
           </div>
         </div>
 
         {/* //END OF LEFT SECTION */}
-
         <div className={Style.navbar_container_right}>
           <div className={Style.navbar_container_right_discover}>
+            {/* DISCOVER MENU */}
             <p onClick={(e) => openMenu(e)}>Discover</p>
             {discover && (
               <div className={Style.navbar_container_right_discover_box}>
@@ -114,10 +123,11 @@ const NavBar = () => {
 
           {/* CREATE BUTTON SECTION */}
           <div className={Style.navbar_container_right_button}>
-            <Button btnText="Create" />
+            <Button btnName="Create" handleClick={() => {}} />
           </div>
 
           {/* USER PROFILE */}
+
           <div className={Style.navbar_container_right_profile_box}>
             <div className={Style.navbar_container_right_profile}>
               <Image
@@ -134,6 +144,7 @@ const NavBar = () => {
           </div>
 
           {/* MENU BUTTON */}
+
           <div className={Style.navbar_container_right_menuBtn}>
             <CgMenuRight
               className={Style.menuIcon}
@@ -143,9 +154,9 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* SIDEBAR COMPONENT */}
+      {/* SIDBAR CPMPONE/NT */}
       {openSideMenu && (
-        <div className={Style.SideBar}>
+        <div className={Style.sideBar}>
           <SideBar setOpenSideMenu={setOpenSideMenu} />
         </div>
       )}
