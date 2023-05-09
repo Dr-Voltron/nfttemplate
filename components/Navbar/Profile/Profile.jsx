@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
 import { FaUserAlt, FaRegImage, FaUserEdit } from "react-icons/fa";
 import { MdHelpCenter } from "react-icons/md";
 import { TbDownloadOff, TbDownload } from "react-icons/tb";
@@ -8,6 +8,7 @@ import Link from "next/link";
 //INTERNAL IMPORT
 import Style from "./Profile.module.css";
 import images from "../../../img";
+
 const Profile = () => {
   return (
     <div className={Style.profile}>
@@ -21,10 +22,11 @@ const Profile = () => {
         />
 
         <div className={Style.profile_account_info}>
-          <p>Ojinni Toluwalope</p>
-          {/* <small>0x343434345354553.....</small> */}
+          <p>Shoaib Bhai</p>
+          <small>X038499382920203...</small>
         </div>
       </div>
+
       <div className={Style.profile_menu}>
         <div className={Style.profile_menu_one}>
           <div className={Style.profile_menu_one_item}>
@@ -36,7 +38,7 @@ const Profile = () => {
           <div className={Style.profile_menu_one_item}>
             <FaRegImage />
             <p>
-              <Link href={{ pathname: "/my-items" }}>My Items </Link>
+              <Link href={{ pathname: "/my-items" }}>My Items</Link>
             </p>
           </div>
           <div className={Style.profile_menu_one_item}>
@@ -46,17 +48,18 @@ const Profile = () => {
             </p>
           </div>
         </div>
+
         <div className={Style.profile_menu_two}>
           <div className={Style.profile_menu_one_item}>
             <MdHelpCenter />
             <p>
-              <Link href={{ pathname: " /help" }}>Help</Link>
+              <Link href={{ pathname: "/help" }}>Help</Link>
             </p>
           </div>
           <div className={Style.profile_menu_one_item}>
             <TbDownload />
             <p>
-              <Link href={{ pathname: "/disconnect" }}>Disconnect</Link>
+              <Link href={{ pathname: "/disconnet" }}>Disconnet</Link>
             </p>
           </div>
         </div>
