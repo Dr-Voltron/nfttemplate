@@ -4,6 +4,7 @@ import Style from "../styles/index.module.css";
 import {
   BigNFTSlider,
   Category,
+  Collection,
   Filter,
   HeroSection,
   NFTCard,
@@ -18,6 +19,11 @@ const Home = () => {
       <HeroSection />
       <Service />
       <BigNFTSlider />
+      <Title
+        heading=" New Collection "
+        paragraph="Discover the most outstanding NFTs in all topics of life"
+      />
+      <Collection />
       <Title
         heading=" Feautured NFTs"
         paragraph="Discover the most outstanding NFTs in all topics of life"
