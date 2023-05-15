@@ -8,7 +8,23 @@ import {
 import Style from "./Collection.module.css";
 import DaysComponents from "./DaysComponents/DaysComponents";
 const Collection = () => {
-  return <div>Collection</div>;
+  const [popular, setPopular] = useState(true);
+  const [following, setFollowing] = useState(false);
+  const [news, setNews] = useState(false);
+
+  const CardArray = [1, 2, 3, 4, 5, 6, 7, 8];
+  const followingArray = [1, 2, 3, 4];
+  const newsArray = [1, 2, 3, 4, 5, 6];
+  return (
+    <div className={Style.collection}>
+      <div className={Style.collection_title}>
+        <h2>Top List Creators</h2>
+        <div className={Style.collection_collections}>
+          <div className={Style.collection_collections_btn}></div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Collection;
